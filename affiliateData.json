@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Amazon KDP",
+    "category": "Print Notebook & Book Only",
+    "about": "Print notebook & low content notebook only",
+    "affiliate_url": "https://www.bluehost.com/track/your-id"
+  },
+  {
+    "id": "2", 
+    "name": "Semrush",
+    "category": "SEO & Marketing",
+    "about": "An all-in-one tool suite for improving online visibility and discovering marketing insights, including SEO, PPC, and content marketing.",
+    "affiliate_url": "https://semrush.sjv.io/your-id"
+  },
+  {
+    "id": "3",
+    "name": "Shopify",
+    "category": "E-commerce",
+    "about": "The leading commerce platform that allows anyone to set up an online store and sell their products with ease.",
+    "affiliate_url": "https://www.shopify.com/?ref=your-id"
+  },
+  {
+    "id": "4",
+    "name": "Canva Pro",
+    "category": "Design",
+    "about": "A powerful design tool that helps businesses create professional-looking social media graphics, presentations, and marketing materials.",
+    "affiliate_url": "https://canva.7eej.net/your-id"
+  },
+  {
+    "id": "5",
+    "name": "ConvertKit",
+    "category": "Email Marketing",
+    "about": "An email marketing platform built for creators and small businesses to grow their audience and automate their marketing.",
+    "affiliate_url": "https://convertkit.com?lmref=your-id"
+  },
+  {
+    "id": "6",
+    "name": "Monday.com",
+    "category": "Productivity",
+    "about": "A work OS that powers teams to run projects and workflows with confidence, improving efficiency and collaboration.",
+    "affiliate_url": "https://monday.com/referral/your-id"
+  }
+]

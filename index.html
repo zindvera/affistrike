@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>AffiStrike — AI Business Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --bg-color: #fcfcfd;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --white: #ffffff;
+            --black: #000000;
+            --border-color: #f3f4f6;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --btn-blue-grey: #f1f5f9;
+            --success-green: #059669;
+            --link-color: #6366f1;
+            --error-red: #ef4444;
+            --chat-user-bg: #eff6ff;
+            --chat-error-bg: #fef2f2;
+            --chat-error-border: #fecaca;
+            --chat-error-text: #991b1b;
+        }
+
+        /* --- BODY BACKGROUND (SOFT MESH GRADIENT) --- */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            margin: 0;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- FIXED NAVBAR (SOLID WHITE) --- */
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #ffffff;
+            border-bottom: 1px solid #edf2f7;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #111827;
+        }
+
+        .logo span {
+            color: #6366f1;
+        }
+
+        /* --- MAIN HEADER & TYPOGRAPHY --- */
+        .main-header {
+            padding-top: 110px;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Mobile Styles (Default) */
+        .main-header h1 {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .subtext {
+            font-size: 0.95rem;
+            color: #6b7280;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            padding: 0 10px;
+        }
+
+        /* Tablet Styles (Dedicated Query) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .main-header h1 {
+                font-size: 3rem;
+            }
+
+            .subtext {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Desktop Styles (Dedicated Query) */
+        @media (min-width: 1025px) {
+            .main-header h1 {
+                font-size: 3.8rem;
+                max-width: 850px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .subtext {
+                font-size: 1.15rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* The "Jumping Fix" for rotating words */
+        .word-carousel {
+            display: inline-grid;
+            text-align: center;
+            vertical-align: baseline;
+            position: relative;
+            padding: 0 4px;
+        }
+
+        .word-carousel::after {
+            content: "business";
+            grid-area: 1/1;
+            visibility: hidden;
+            height: 0;
+        }
+
+        .tip-category-title {
+            display: block;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--black);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        #rotating-word {
+            grid-area: 1/1;
+            background: linear-gradient(135deg, #4f46e5 0%, #9333ea 45%, #db2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .fade-hidden {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .nowrap-group {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* --- FOOTER (SOLID WHITE) --- */
+        .main-footer {
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            background: #ffffff;
+            border-top: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #111827;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .global-container {
+            width: calc(100% - 14px);
+            margin: 0 7px;
+        }
+
+        @media (min-width: 768px) {
+            .global-container {
+                width: 90%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+        }
+
+        .content-text {
+            margin-top: 0.2in;
+        }
+
+        .custom-textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            border: 2px solid var(--border-color);
+            border-radius: 1.5rem;
+            outline: none;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        .custom-textarea:focus {
+            border-color: #6366f1;
+        }
+
+        /* Container for the bullet list */
+        .bullet-container {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        /* The blurring effect for the 3rd item */
+        .bullet-container.collapsed {
+            max-height: 140px;
+            /* Adjust based on your font size to show ~2.5 bullets */
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+
+
+
+        .btn-show-more {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #6366f1;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .btn-show-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -2px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Container for the bullet list */
+        .bullet-container {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        /* The blurring effect for the 3rd item */
+        .bullet-container.collapsed {
+            max-height: 130px;
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+
+        .show-more-wrapper {
+            text-align: center;
+            margin-top: 15px;
+            /* Position it over the blurred area */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Pure link styling */
+        .link-show-more {
+            color: #6366f1;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .link-show-more:hover {
+            text-decoration: underline;
+            color: #4f46e5;
+        }
+
+        .btn-black {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 800;
+            font-size: 0.95rem;
+            width: fit-content;
+            min-width: 140px;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.2s;
+        }
+
+        .btn-black:active {
+            transform: scale(0.95);
+        }
+
+        .btn-black:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .section-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verdict-box {
+            border-left: 4px solid var(--black);
+            padding-left: 1.25rem;
+        }
+
+        /* New layout for the verdict section */
+        .verdict-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 1rem;
+        }
+
+        /* The Label Badge (Yes Absolutely, etc.) */
+        .status-badge {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+
+        /* Layout to match the Concept & USP cards exactly */
+        .result-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+
+        /* Ensure these classes match your existing ones */
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--black);
+            vertical-align: middle;
+        }
+
+        .quality-badge {
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        /* The Probability Text */
+        .probability-badge {
+            background: rgba(241, 245, 249, 0.7);
+            backdrop-filter: blur(8px);
+            color: #475569;
+            padding: 0.5rem 1.2rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(226, 232, 240, 1);
+        }
+
+        /* Responsive Behavior */
+        @media (max-width: 767px) {
+            .verdict-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .probability-badge {
+                margin-left: auto;
+                /* Pushes to the right on Tablet/Desktop */
+            }
+        }
+
+        /* Mobile specific: Stack the probability under the status */
+        @media (max-width: 767px) {
+            .verdict-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .probability-badge {
+                margin-left: 0;
+            }
+        }
+
+        /* Desktop: Push probability to the right */
+        @media (min-width: 768px) {
+            .probability-badge {
+                margin-left: auto;
+            }
+        }
+
+
+
+        .score-label {
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #6366f1;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            display: block;
+            letter-spacing: 0.05em;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-right: 0.5rem;
+            color: var(--black);
+            vertical-align: middle;
+        }
+
+        .quality-badge {
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-left: 0.5rem;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        .verdict-badge {
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 0.4rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .improve-btn {
+            position: relative;
+            background: var(--btn-blue-grey);
+            color: var(--black);
+            border: 3px solid #e2e8f0;
+            padding: 1.25rem 3rem;
+            border-radius: 4rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        .improve-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none !important;
+        }
+
+        .improve-btn::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: conic-gradient(from 0deg, transparent 0%, transparent 70%, #6366f1 85%, #ec4899 100%);
+            border-radius: 4rem;
+            z-index: -1;
+            opacity: 0;
+            padding: 4px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: destination-out;
+        }
+
+
+        .animate-border::after {
+            opacity: 1;
+            animation: snake-border 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes snake-border {
+            0% {
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(1080deg);
+                opacity: 0;
+            }
+        }
+
+        .improve-btn:hover:not(:disabled) {
+            transform: translateY(-4px);
+            background: #fff;
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15);
+            border-color: #cbd5e1;
+        }
+
+        .badge-container-wrapper {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.25rem;
+            width: 100%;
+        }
+
+        .chat-bubble {
+            border-radius: 1.5rem;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .bubble-user {
+            background: var(--chat-user-bg);
+            align-self: flex-end;
+            font-weight: 600;
+            margin-left: auto;
+            max-width: 85%;
+            color: #1e40af;
+            border: 1px solid #dbeafe;
+        }
+
+        .bubble-error {
+            background: var(--chat-error-bg);
+            border: 1px solid var(--chat-error-border);
+            color: var(--chat-error-text);
+            align-self: flex-start;
+            font-weight: 600;
+            max-width: 85%;
+        }
+
+        .affiliate-link {
+            color: var(--link-color);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .affiliate-link:hover {
+            color: #4f46e5;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .loader-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+            width: 100%;
+        }
+
+        .blue-spinner {
+            width: 42px;
+            height: 42px;
+            border: 4px solid #eff6ff;
+            border-bottom-color: #6366f1;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 0.8s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .read-more-btn {
+            color: #6366f1;
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0;
+            cursor: pointer;
+            margin-left: 5px;
+            text-decoration: underline;
+        }
+
+        .dots {
+            color: var(--text-muted);
+        }
+
+        #error-toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--error-red);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar-fixed">
+        <div class="global-container nav-content">
+            <div class="logo">AffiStrik<span>.</span></div>
+        </div>
+    </nav>
+
+
+
+
+    <div id="error-toast"></div>
+
+
+    <header class="global-container text-center main-header">
+        <h1 class="fw-800">
+            How is my
+            <span class="word-carousel">
+                <span id="rotating-word">business</span>
+            </span>
+            <span class="nowrap-group">idea?</span>
+        </h1>
+        <p class="subtext">
+            Find out if your idea is <strong>worth pursuing</strong>.
+        </p>
+    </header>
+
+    <main class="global-container">
+        <div id="chat-phase" class="hidden mt-2">
+            <div id="messages-container"></div>
+            <div id="global-loader" class="hidden">
+                <div class="loader-wrapper">
+                    <span class="blue-spinner"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="ui-input-area" class="mt-4">
+            <textarea id="ideaInput" rows="3" class="custom-textarea mb-3"
+                placeholder="Describe your business or product idea here..."></textarea>
+            <button id="btn-analyze" class="btn-black" onclick="startValidation()">Analyze Idea</button>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="global-container">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Cookies</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 AffiStrik. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const WORKER_URL = "https://little-queen-f49a.vineetkum25.workers.dev";
+        let affiliateProducts = [];
+
+        async function fetchTools() {
+            try {
+                const response = await fetch('affiliateData.json');
+                if (!response.ok) throw new Error("Failed to load JSON");
+                affiliateProducts = await response.json();
+            } catch (err) {
+                console.error("JSON Load Error:", err);
+                showError("Configuration error. Please check your JSON file.");
+            }
+        }
+        fetchTools();
+
+
+        const words = ["business", "Product", "Service"];
+        let wordIndex = 0;
+        const rotateEl = document.getElementById('rotating-word');
+
+        setInterval(() => {
+            // 1. Start the fade out and slight slide down
+            rotateEl.classList.add('fade-hidden');
+
+            setTimeout(() => {
+                // 2. Change the word while invisible
+                wordIndex = (wordIndex + 1) % words.length;
+                rotateEl.innerText = words[wordIndex];
+
+                // 3. Fade back in and slide up to position
+                rotateEl.classList.remove('fade-hidden');
+            }, 400); // This delay matches the CSS transition time
+        }, 2500); // Slightly slower rotation for better readability
+
+        let chatContext = [];
+
+        const animObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-border');
+                    animObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        function showError(msg) {
+            const toast = document.getElementById('error-toast');
+            toast.innerText = msg;
+            toast.style.display = 'block';
+            setTimeout(() => toast.style.display = 'none', 3500);
+        }
+
+        function moveInputToBottom() {
+            const main = document.querySelector('main');
+            const inputArea = document.getElementById('ui-input-area');
+            main.appendChild(inputArea);
+        }
+
+        function truncateByWord(text, limit) {
+            const wordsArr = text.split(/\s+/);
+            if (wordsArr.length <= limit) return text;
+            const truncated = wordsArr.slice(0, limit).join(' ');
+            const fullId = 'f-' + Math.random().toString(15).substr(2, 9);
+            const truncId = 't-' + Math.random().toString(15).substr(2, 9);
+            return `<span id="${truncId}">${truncated}</span><span class="dots">...</span><span id="${fullId}" class="hidden">${text}</span><button class="read-more-btn" onclick="toggleReadMore('${truncId}', '${fullId}', this)">Read more</button>`;
+        }
+
+        window.toggleReadMore = (truncId, fullId, btn) => {
+            const truncEl = document.getElementById(truncId);
+            const fullEl = document.getElementById(fullId);
+            const dots = truncEl.nextElementSibling;
+            if (fullEl.classList.contains('hidden')) {
+                fullEl.classList.remove('hidden');
+                truncEl.classList.add('hidden');
+                dots.classList.add('hidden');
+                btn.innerText = 'Read less';
+            } else {
+                fullEl.classList.add('hidden');
+                truncEl.classList.remove('hidden');
+                dots.classList.remove('hidden');
+                btn.innerText = 'Read more';
+            }
+        };
+
+        window.startValidation = () => {
+            if (affiliateProducts.length === 0) {
+                showError("Data still loading, please try again in a moment.");
+                return;
+            }
+            const val = document.getElementById('ideaInput').value.trim();
+            if (val.length < 5) return;
+            handleQuery(val, "VALIDATE");
+        };
+
+        window.triggerImprovement = (btn) => {
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = "✨ Improving...";
+                btn.classList.remove('animate-border');
+            }
+            handleQuery(`[IMPROVE_REQUEST]`, "IMPROVE");
+        };
+
+
+        function getSystemPrompt(mode) {
+            const toolList = affiliateProducts.map(p => `- ${p.name}: ${p.about} [URL: ${p.affiliate_url}]`).join('\n');
+
+            if (mode === "VALIDATE") {
+                return `Respond ONLY in valid JSON. You are an expert Business Architect. Evaluate the business idea. 
+        Structure:
+        {
+            "status": "OK" or "UNCLEAR",
+            "problem": { "score": "X/10", "label": "Bad" | "Average" | "Good" | "Very Good" | "Excellent", "desc": "Approx 40 words." },
+            "concept": { "score": "X/10", "label": "Bad" | "Average" | "Good" | "Very Good" | "Excellent", "desc": "Approx 40 words." },
+            "final": { "score": "X%", "label": "Avoid" | "You can Try" | "Yes Absolutely", "desc": "Approx 40 words final verdict." }
+        }`;
+            } else {
+                return `Respond ONLY in valid JSON. Suggest strategic improvements for the business idea.
+    
+    STRICT CATEGORY TEMPLATE (Titles must be exact):
+    1. "Features or Benefits Addon": Tactical advice.
+    2. "Free Marketing": Strategic advice only.
+    3. "Paid Marketing": Strategic advice only. 
+    4. "Tools Which Can Help": Tool-specific recommendations.
+
+    CRITICAL CONTENT RULES:
+    - CATEGORY 1, 2, 3: Provide exactly 1 to 4 high-impact suggestions per category.
+    - CATEGORY 4 MANDATE (Tools): You MUST use the Markdown format [Tool Name](URL) followed by a COLON (:).
+    - Example: "[Shopify](https://www.shopify.com/?ref=your-id) : Use this to build your storefront."
+    - NEVER write Tool Name (URL). ALWAYS use [Tool Name](URL).
+
+    AVAILABLE TOOLS:
+    ${toolList}
+    
+    Required JSON Structure:
+    {
+        "tips": [
+            { "title": "Features or Benefits Addon", "bullets": ["..."] },
+            { "title": "Free Marketing", "bullets": ["..."] },
+            { "title": "Paid Marketing", "bullets": ["..."] },
+            { "title": "Tools Which Can Help", "bullets": ["[Tool Name](URL) : Specific business explanation."] }
+        ]
+    }`;
+            }
+        }
+
+
+        async function handleQuery(text, mode) {
+            const loader = document.getElementById('global-loader');
+            loader.classList.remove('hidden');
+
+            if (mode !== "IMPROVE") {
+                document.getElementById('btn-analyze').disabled = true;
+                document.getElementById('chat-phase').classList.remove('hidden');
+                appendUserBubble(text);
+                document.getElementById('ideaInput').value = "";
+                moveInputToBottom();
+            }
+
+            chatContext.push({ role: "user", parts: [{ text }] });
+            try {
+                const sys = getSystemPrompt(mode);
+                const res = await fetch(WORKER_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ contents: chatContext, system_instruction: { parts: [{ text: sys }] } })
+                });
+
+                if (!res.ok) throw new Error("Worker failed");
+
+                const data = await res.json();
+                const aiRaw = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
+
+                let cleanJson = aiRaw;
+                if (aiRaw.includes("```")) {
+                    const match = aiRaw.match(/\{[\s\S]*\}/);
+                    if (match) cleanJson = match[0];
+                }
+
+                const parsed = JSON.parse(cleanJson);
+
+                loader.classList.add('hidden');
+                document.getElementById('btn-analyze').disabled = false;
+
+                if (parsed.status === "UNCLEAR") {
+                    appendErrorBubble("Your idea seems a bit too brief. Could you explain what problem you're targeting or how your business works?");
+                    chatContext.pop();
+                    moveInputToBottom();
+                    return;
+                }
+
+                renderContent(parsed, mode);
+                chatContext.push({ role: "model", parts: [{ text: cleanJson }] });
+                moveInputToBottom();
+            } catch (e) {
+                console.error("Query Error:", e);
+                loader.classList.add('hidden');
+                document.getElementById('btn-analyze').disabled = false;
+                showError("System error. Please try again later.");
+            }
+        }
+
+
+
+
+        function appendUserBubble(text) {
+            const container = document.getElementById('messages-container');
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble bubble-user`;
+            bubble.innerText = text;
+            container.appendChild(bubble);
+        }
+
+        function appendErrorBubble(text) {
+            const container = document.getElementById('messages-container');
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble bubble-error`;
+            bubble.innerText = text;
+            container.appendChild(bubble);
+        }
+
+
+
+
+
+        function renderContent(data, mode) {
+            const container = document.getElementById('messages-container');
+            const wrap = document.createElement('div');
+
+            if (mode === "VALIDATE") {
+                const timestamp = Date.now();
+
+                // --- NEW CONVERSION LOGIC ---
+                // Converts "85%" or "85" into "8.5/10" to match Concept & USP UI
+                let finalScoreFormatted = data.final.score;
+                if (typeof finalScoreFormatted === 'string' && finalScoreFormatted.includes('%')) {
+                    let num = parseFloat(finalScoreFormatted.replace('%', ''));
+                    finalScoreFormatted = (num / 10).toFixed(1) + "/10";
+                } else if (!isNaN(finalScoreFormatted) && finalScoreFormatted > 10) {
+                    // If it's a number like 85, convert to 8.5/10
+                    finalScoreFormatted = (finalScoreFormatted / 10).toFixed(1) + "/10";
+                }
+
+                wrap.innerHTML = `
+            <div class="section-card">
+                <div class="verdict-box">
+                    <span class="score-label">The Problem</span>
+                    <span class="score-value">${data.problem.score}</span>
+                    <span class="quality-badge">${data.problem.label}</span>
+                    <div class="content-text" style="font-weight:500; color:var(--text-muted); line-height:1.77">
+                        ${truncateByWord(data.problem.desc, 15)}
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="verdict-box">
+                    <span class="score-label">Concept & USP</span>
+                    <span class="score-value">${data.concept.score}</span>
+                    <span class="quality-badge">${data.concept.label}</span>
+                    <div class="content-text" style="font-weight:500; color:var(--text-muted); line-height:1.77">
+                        ${truncateByWord(data.concept.desc, 15)}
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="verdict-box">
+                    <span class="score-label">Should You Start</span>
+                    
+                    <div class="result-row" style="display: flex; align-items: center; gap: 8px; margin-top: 4px; margin-bottom: 12px;">
+                        <span class="score-value" style="font-size: 1.5rem; font-weight: 800;">${finalScoreFormatted}</span>
+                        
+                        <span class="quality-badge" style="background: #f3f4f6; color: #111827; border: 1px solid #f3f4f6;">
+                            ${data.final.label}
+                        </span>
+                    </div>
+
+                    <div class="content-text" style="font-weight:500; color:var(--text-muted); line-height:1.77">
+                        ${truncateByWord(data.final.desc, 15)}
+                    </div>
+                </div>
+            </div>
+
+            <div class="badge-container-wrapper">
+                <button class="improve-btn" id="imp-trigger-${timestamp}">✨ Improve My Idea</button>
+            </div>
+        `;
+
+                setTimeout(() => {
+                    const b = document.getElementById(`imp-trigger-${timestamp}`);
+                    if (b) {
+                        animObserver.observe(b);
+                        b.onclick = function () { window.triggerImprovement(this); };
+                    }
+                }, 100);
+
+            } else {
+                // ... (Keep your existing Improvement rendering logic here) ...
+                let h = `<div class="section-card">
+                    <h1 style="font-size:1.4rem; font-weight:800; border-bottom:2px solid #eee; padding-bottom:12px; margin-bottom:24px">Improvement Tips & Ideas</h1>
+                    <ul style="padding:0; list-style:none;">`;
+
+                data.tips.forEach((tip, index) => {
+                    if (tip.bullets && tip.bullets.length > 0) {
+                        const isTools = tip.title.toLowerCase().includes("tools");
+                        const hasMany = tip.bullets.length > 2 && !isTools;
+                        const containerId = `bullet-list-${index}`;
+                        const linkId = `link-more-${index}`;
+
+                        h += `<li style="margin-bottom:35px;">
+                        <span class="tip-category-title">${tip.title}</span>
+                        <div id="${containerId}" class="bullet-container ${hasMany ? 'collapsed' : ''}">
+                            <ul style="list-style-type:disc; padding-left:20px; font-weight:400; margin-bottom:0;">
+                                ${tip.bullets.map(b => `<li style="margin-bottom:12px; color:#4b5563; font-size:1rem; line-height:1.6;">${parseLinks(b)}</li>`).join('')}
+                            </ul>
+                        </div>`;
+
+                        if (hasMany) {
+                            h += `<div class="show-more-wrapper">
+                            <a href="javascript:void(0)" id="${linkId}" class="link-show-more" onclick="toggleBullets('${containerId}', '${linkId}')">Show more ↓</a>
+                          </div>`;
+                        }
+                        h += `</li>`;
+                    }
+                });
+                h += `</ul></div>`;
+                wrap.innerHTML = h;
+            }
+            container.appendChild(wrap);
+        }
+
+
+        function parseLinks(text) {
+            if (!text) return "";
+
+            // 1. Match standard Markdown: [Name](URL)
+            let processed = text.replace(/\[([^\]]+)\]\((https?:\/\/[^\s\)]+)\)/g, (match, name, url) => {
+                return `<a href="${url}" target="_blank" class="read-more-btn" style="text-decoration: underline; font-size: 16px; color: #2563eb; font-weight: 700; margin-left: 0;">${name}</a>`;
+            });
+
+            // 2. Fallback: Match Name (URL) if AI forgets brackets
+            processed = processed.replace(/^([a-zA-Z0-9\s]+)\s*\((https?:\/\/[^\s\)]+)\)/g, (match, name, url) => {
+                return `<a href="${url}" target="_blank" class="read-more-btn" style="text-decoration: underline; font-size: 16px; color: #2563eb; font-weight: 700; margin-left: 0;">${name.trim()}</a>`;
+            });
+
+            return processed;
+        }
+
+        // Global Toggle Function
+        window.toggleBullets = (containerId, linkId) => {
+            const container = document.getElementById(containerId);
+            const link = document.getElementById(linkId);
+
+            if (container.classList.contains('collapsed')) {
+                container.classList.remove('collapsed');
+                container.style.maxHeight = '2000px';
+                link.innerHTML = 'Show less ↑';
+            } else {
+                container.classList.add('collapsed');
+                container.style.maxHeight = '130px';
+                link.innerHTML = 'Show more ↓';
+
+                container.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
+
+        // 3. Global Toggle Function for Bullet Lists
+        window.toggleBullets = (containerId, btnId) => {
+            const container = document.getElementById(containerId);
+            const btn = document.getElementById(btnId);
+
+            if (container.classList.contains('collapsed')) {
+                container.classList.remove('collapsed');
+                container.style.maxHeight = '2000px'; // Sufficient height for full list
+                btn.innerText = 'Show Less';
+            } else {
+                container.classList.add('collapsed');
+                container.style.maxHeight = '140px'; // Back to blurred state
+                btn.innerText = 'Show More';
+
+                // Scroll back to the top of the specific category
+                container.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
+    </script>
+</body>
+
+</html>
