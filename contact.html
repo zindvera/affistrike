@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Contact Us — AffiStrike</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --bg-color: #fcfcfd;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --white: #ffffff;
+            --black: #000000;
+            --border-color: #f3f4f6;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            margin: 0;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #ffffff;
+            border-bottom: 1px solid #edf2f7;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #6366f1;
+        }
+
+        .main-header {
+            padding-top: 110px;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+        }
+
+        .global-container {
+            width: calc(100% - 14px);
+            margin: 0 7px;
+        }
+
+        @media (min-width: 768px) {
+            .global-container {
+                width: 90%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        .section-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-label {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #6366f1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111827;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .content-text {
+            font-weight: 500;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .main-footer {
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            background: #ffffff;
+            border-top: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar-fixed">
+        <div class="global-container nav-content">
+            <a href="index.html" class="logo">AffiStrike<span>.</span></a>
+        </div>
+    </nav>
+
+    <header class="global-container main-header">
+        <h1>Contact Us</h1>
+    </header>
+
+    <main class="global-container">
+        <div class="section-card">
+            <span class="contact-label">Get in Touch</span>
+            <a href="mailto:mockoverflow@gmail.com" class="contact-value">mockoverflow@gmail.com</a>
+            <div class="mt-4">
+                <p class="content-text"><strong>Support Hours:</strong> Monday – Friday, 9:00 AM to 6:00 PM (IST)</p>
+                <p class="content-text"><strong>Response Time:</strong> We usually respond within 24–48 hours.</p>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <span class="contact-label">Feedback</span>
+            <p class="content-text">
+                If you have a suggestion on how we can improve our AI evaluation or want to suggest a new feature, please don't hesitate to reach out. Your input helps us make AffiStrike better for everyone.
+            </p>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="global-container">
+            <div class="footer-links">
+                 <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 AffiStrike. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

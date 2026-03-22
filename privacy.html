@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Privacy Policy — AffiStrike</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --bg-color: #fcfcfd;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --white: #ffffff;
+            --black: #000000;
+            --border-color: #f3f4f6;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            margin: 0;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #ffffff;
+            border-bottom: 1px solid #edf2f7;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #6366f1;
+        }
+
+        .main-header {
+            padding-top: 110px;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1rem;
+        }
+
+        .global-container {
+            width: calc(100% - 14px);
+            margin: 0 7px;
+        }
+
+        @media (min-width: 768px) {
+            .global-container {
+                width: 90%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        .section-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .policy-subtitle {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #6366f1;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .content-text {
+            font-weight: 500;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .last-updated {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #9ca3af;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            display: block;
+            text-align: center;
+        }
+
+        .main-footer {
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            background: #ffffff;
+            border-top: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar-fixed">
+        <div class="global-container nav-content">
+            <a href="index.html" class="logo">AffiStrike<span>.</span></a>
+        </div>
+    </nav>
+
+    <header class="global-container main-header">
+        <h1>Privacy Policy</h1>
+        <span class="last-updated">Last Updated: March 22, 2026</span>
+    </header>
+
+    <main class="global-container">
+        <div class="section-card">
+            <span class="policy-subtitle">Zero Data Collection</span>
+            <p class="content-text">
+                At AffiStrike, we take a "Privacy-First" approach. Because our platform is built as a frontend-only application using a Cloudflare proxy and the Groq API, we <strong>do not have a backend database</strong> to store your personal information or your business ideas.
+            </p>
+            <p class="content-text">
+                Any text you enter into the "Analyze Idea" box is processed in real-time. We do not save, store, or log the content of your ideas. Once you refresh or close the page, the data is gone from our end.
+            </p>
+        </div>
+
+        <div class="section-card">
+            <span class="policy-subtitle">Technical Processing</span>
+            <p class="content-text">
+                To provide our AI evaluation, your input is sent through a <strong>Cloudflare proxy server</strong> to the <strong>Groq API</strong>. 
+            </p>
+            <ul class="content-text">
+                <li><strong>Transience:</strong> Data is processed "in-flight" and is not retained by AffiStrike after the response is generated.</li>
+                <li><strong>Security:</strong> All communication between your browser and our processing layers is encrypted via HTTPS.</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <span class="policy-subtitle">Third-Party Links</span>
+            <p class="content-text">
+                Our evaluation results may contain affiliate links to external tools (e.g., Shopify, Canva). Please note that once you leave AffiStrike, you are subject to the privacy policies of those specific third-party websites.
+            </p>
+        </div>
+
+        <div class="section-card">
+            <span class="policy-subtitle">Contact Us</span>
+            <p class="content-text">
+                If you choose to email us at <strong>mockoverflow@gmail.com</strong>, we will only use your email address to reply to your specific inquiry.
+            </p>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="global-container">
+            <div class="footer-links">
+                 <a href="about.html">About</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 AffiStrike. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
