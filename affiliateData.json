@@ -1,44 +1,142 @@
 [
   {
     "id": "1",
-    "name": "Amazon KDP",
-    "category": "Print Notebook & Book Only",
-    "about": "Print notebook & low content notebook only",
-    "affiliate_url": "https://www.bluehost.com/track/your-id"
+    "name": "Carrd",
+    "category": "Landing Pages",
+    "about": "A streamlined 'no-code' builder ideal for setting up 'Coming Soon' pages, waitlists, or simple portfolios to capture email leads in under 10 minutes.",
+    "affiliate_url": "https://carrd.co/"
   },
   {
-    "id": "2", 
-    "name": "Semrush",
-    "category": "SEO & Marketing",
-    "about": "An all-in-one tool suite for improving online visibility and discovering marketing insights, including SEO, PPC, and content marketing.",
-    "affiliate_url": "https://semrush.sjv.io/your-id"
+    "id": "2",
+    "name": "Submagic",
+    "category": "Social Video",
+    "about": "An AI-powered video editor for short-form content that automatically generates viral captions and performs smart zooms to increase viewer retention.",
+    "affiliate_url": "https://www.submagic.co"
   },
   {
     "id": "3",
-    "name": "Shopify",
-    "category": "E-commerce",
-    "about": "The leading commerce platform that allows anyone to set up an online store and sell their products with ease.",
-    "affiliate_url": "https://www.shopify.com/?ref=your-id"
+    "name": "Beehiiv",
+    "category": "Newsletter & Waitlist",
+    "about": "A modern newsletter ecosystem with a built-in referral system, making it the best way to build a pre-launch audience and monetize niche content.",
+    "affiliate_url": "https://www.beehiiv.com"
   },
   {
     "id": "4",
-    "name": "Canva Pro",
-    "category": "Design",
-    "about": "A powerful design tool that helps businesses create professional-looking social media graphics, presentations, and marketing materials.",
-    "affiliate_url": "https://canva.7eej.net/your-id"
+    "name": "Systeme.io",
+    "category": "Marketing Platform",
+    "about": "An all-in-one suite that combines sales funnels, email marketing, and course hosting, eliminating the need for multiple expensive subscriptions.",
+    "affiliate_url": "https://systeme.io"
   },
   {
     "id": "5",
-    "name": "ConvertKit",
-    "category": "Email Marketing",
-    "about": "An email marketing platform built for creators and small businesses to grow their audience and automate their marketing.",
-    "affiliate_url": "https://convertkit.com?lmref=your-id"
+    "name": "Tally.so",
+    "category": "Surveys & Research",
+    "about": "A 'Notion-style' form builder that makes data collection feel like writing a document; perfect for conducting customer discovery and market research.",
+    "affiliate_url": "https://tally.so"
   },
   {
     "id": "6",
-    "name": "Monday.com",
-    "category": "Productivity",
-    "about": "A work OS that powers teams to run projects and workflows with confidence, improving efficiency and collaboration.",
-    "affiliate_url": "https://monday.com/referral/your-id"
+    "name": "Looka",
+    "category": "Branding",
+    "about": "An AI brand architect that generates professional logos and full identity kits (social headers, brand guidelines) instantly based on your preferences.",
+    "affiliate_url": "https://looka.com"
+  },
+  {
+    "id": "7",
+    "name": "AdCreative.ai",
+    "category": "AI Advertising",
+    "about": "Generates data-backed ad banners and social media creatives using AI, predicting which designs will perform best to save on graphic design costs.",
+    "affiliate_url": "https://www.adcreative.ai"
+  },
+  {
+    "id": "8",
+    "name": "InVideo AI",
+    "category": "AI Video Ads",
+    "about": "Turns text prompts or business descriptions into professional video ads with relevant stock footage, scripts, and human-like voiceovers.",
+    "affiliate_url": "https://invideo.io"
+  },
+  {
+    "id": "9",
+    "name": "Snov.io",
+    "category": "B2B Outreach",
+    "about": "A lead generation and email automation tool that finds verified email addresses and sends automated cold outreach sequences to land business deals.",
+    "affiliate_url": "https://snov.io"
+  },
+  {
+    "id": "10",
+    "name": "SE Ranking",
+    "category": "SEO",
+    "about": "A comprehensive SEO toolkit for keyword research, competitor tracking, and backlink analysis to drive free organic traffic from Google.",
+    "affiliate_url": "https://seranking.com"
+  },
+  {
+    "id": "11",
+    "name": "Tailwind",
+    "category": "Pinterest/Social",
+    "about": "An automated scheduler that uses AI to design pins and find the best times to post on Pinterest and Instagram for lifestyle or visual brands.",
+    "affiliate_url": "https://www.tailwindapp.com"
+  },
+  {
+    "id": "12",
+    "name": "Shiprocket",
+    "category": "Logistics (India)",
+    "about": "India’s leading shipping aggregator connecting e-commerce businesses to 20+ courier partners in one place with automated tracking.",
+    "affiliate_url": "https://www.shiprocket.in"
+  },
+  {
+    "id": "13",
+    "name": "Interakt",
+    "category": "WhatsApp Marketing",
+    "about": "A WhatsApp Business API platform that allows businesses to automate sales, notifications, and support in mobile-first markets like India.",
+    "affiliate_url": "https://www.interakt.shop"
+  },
+  {
+    "id": "14",
+    "name": "Bubble",
+    "category": "No-Code Apps",
+    "about": "A powerful app builder that allows founders to build complex web applications with databases and logic (like Airbnb clones) without a developer.",
+    "affiliate_url": "https://bubble.io"
+  },
+  {
+    "id": "15",
+    "name": "Thinkific",
+    "category": "Online Courses",
+    "about": "A professional platform for hosting and selling online courses, handling student management, quizzes, and secure payments in one package.",
+    "affiliate_url": "https://www.thinkific.com"
+  },
+  {
+    "id": "16",
+    "name": "Gumroad",
+    "category": "Digital Sales",
+    "about": "The simplest platform for selling digital products like PDFs, templates, and code snippets; start selling within minutes of signing up.",
+    "affiliate_url": "https://gumroad.com"
+  },
+  {
+    "id": "17",
+    "name": "SocialJuice",
+    "category": "Social Proof",
+    "about": "A tool to collect and display video or text testimonials from early users to build the trust needed to convert new visitors into customers.",
+    "affiliate_url": "https://socialjuice.io"
+  },
+  {
+    "id": "18",
+    "name": "Printful",
+    "category": "Print on Demand",
+    "about": "Allows founders to launch a custom apparel brand without holding inventory; they handle printing and shipping only when a customer buys.",
+    "affiliate_url": "https://www.printful.com"
+  },
+  {
+    "id": "19",
+    "name": "Termly",
+    "category": "Legal Compliance",
+    "about": "An automated generator for Privacy Policies and Terms of Service, keeping your business compliant with laws like GDPR without expensive lawyers.",
+    "affiliate_url": "https://termly.io"
+  },
+  {
+    "id": "20",
+    "name": "ManyChat",
+    "category": "Chatbot Marketing",
+    "about": "Automates sales and lead capture through Instagram and Facebook DMs, acting as a 24/7 sales assistant to answer customer questions.",
+    "affiliate_url": "https://manychat.com"
   }
 ]
