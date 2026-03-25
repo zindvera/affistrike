@@ -135,6 +135,11 @@
 
         /* Desktop Styles (Dedicated Query) */
         @media (min-width: 1025px) {
+            .about-div {
+                width: 60%;
+                margin: 45px auto 0 auto;
+            }
+
             .main-header h1 {
                 font-size: 3.8rem;
                 max-width: 850px;
@@ -729,6 +734,11 @@
                 height: 41px;
                 /* Tablet size */
             }
+
+            .about-div {
+                width: 65%;
+                margin: 45px auto 0 auto;
+            }
         }
 
         @media (min-width: 1025px) {
@@ -736,6 +746,253 @@
                 height: 42px;
                 /* Desktop size */
             }
+        }
+
+        /* Master Wrapper to hold everything we build */
+        .affistrike-details-wrapper {
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        /* Specific narrow container for Card 1 */
+        .detail-container-narrow {
+            max-width: 95%;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Card Styling */
+        .detail-card {
+            text-align: left;
+            padding: 2.5rem;
+        }
+
+        .detail-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--black);
+            margin: 0 0 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight-text {
+            font-size: 1.4rem;
+            /* Bigger text */
+            font-weight: 800;
+            /* Extra Bold */
+            color: #111827;
+            line-height: 1.88;
+
+            /* This creates the "pen mark" look */
+            background: #eef2ff;
+            /* Light bluish off-white */
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline;
+
+            /* Ensures the background stays on the text if it wraps lines */
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* Container for the highlighted text */
+        .detail-short-container {
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            width: 100%;
+            /* Full width on phone */
+        }
+
+        /* Tablet & Desktop View: Apply 70% width and centering */
+        @media (min-width: 768px) {
+            .detail-short-container {
+                max-width: 70%;
+            }
+        }
+
+
+
+        /* Align "In Detail" links to the far right of the card */
+        .in-detail-link {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            margin-top: 0.25in;
+            text-align: right;
+            background: none;
+            border: none;
+            color: #6366f1;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .in-detail-link:hover {
+            text-decoration: underline;
+        }
+
+        .detail-short {
+            font-size: 1.25rem;
+            /* Slightly bigger */
+            font-weight: 700;
+            /* Bold */
+            color: var(--text-main);
+            line-height: 1.5;
+            text-align: left;
+            /* Changed to left for a cleaner look with right-aligned link */
+
+            /* Light bluish off-white background */
+            background-color: #f0f7ff;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            display: inline-block;
+            /* Makes background only wrap the text area */
+            margin-bottom: 1.5rem;
+        }
+
+        /* The Toggle Button */
+        .in-detail-link {
+            background: none;
+            border: none;
+            color: #6366f1;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            /* Pushes it to the right */
+            margin-right: 0;
+            text-align: right;
+            /* Centers the button */
+        }
+
+        .in-detail-link:hover {
+            text-decoration: underline;
+        }
+
+        /* The Hidden Expanded Text */
+        .hidden-detail {
+            display: none;
+            opacity: 0;
+        }
+
+        .hidden-detail.show {
+            display: block;
+            opacity: 1;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .hidden-detail p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin: 0 0 1rem 0;
+        }
+
+        .hidden-detail p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .detail-card {
+                padding: 15px;
+            }
+
+            .detail-title {
+                padding-top: 21px;
+            }
+        }
+
+        .detail-container-wide {
+            max-width: 95%;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* 3 cards per row for desktop and tablet */
+        .how-to-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 0.5in;
+            margin-bottom: 2rem;
+        }
+
+        .how-to-col {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 0.25in;
+        }
+
+        .step-label {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--black);
+            margin: 0 0 0.4rem 0;
+        }
+
+        /* Positioned just below step-label */
+        .step-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0 0 1rem 0;
+        }
+
+        .step-image {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: #f8fafc;
+            margin-bottom: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+
+        /* 1 card per row for phone view */
+        @media (max-width: 767px) {
+            .how-to-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .how-to-col {
+                margin-top: 0;
+            }
+
+            .whycard.detail-card {
+                padding: 0;
+            }
+        }
+
+        /* Styling for Why section without images */
+        .why-benefit-card {
+            background: #fcfcfd;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease;
+        }
+
+        .why-benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+        }
+
+        .why-benefit-card .step-label {
+            color: #6366f1;
+            /* Makes the heading pop since there is no image */
         }
     </style>
 </head>
@@ -784,6 +1041,175 @@
             <button id="btn-analyze" class="btn-black" onclick="startValidation()">Analyze Idea</button>
         </div>
     </main>
+
+    <div class="affistrike-details-wrapper">
+
+        <div class="detail-container-narrow">
+
+            <div class="section-card detail-card">
+                <h3 class="detail-title">1. What is AffiStrike?</h3>
+                <div class="about-div">
+                    <div class="highlight-text">
+                        AffiStrike is an AI-powered "gut check" that tells you if your business idea is worth pursuing
+                        before you spend time or money building it.
+                    </div>
+                </div>
+
+
+                <button class="in-detail-link" onclick="toggleDetail('affistrike-detail', this)">
+                    In Detail ↓
+                </button>
+
+                <div id="affistrike-detail" class="hidden-detail">
+                    <p>Most entrepreneurs ask friends for feedback, but friends are often too nice to tell the truth.
+                        AffiStrike acts as your digital sounding board, giving you a completely objective and instant
+                        analysis of your concept.</p>
+
+                    <p>It evaluates your idea across three pillars: the reality of the problem you are trying to solve, the USP of your idea, and finally, the verdict score on whether your idea is worth pursuing or if it needs improvement. You will come to know the greatest strengths of your idea, the problems you might face, and the steps you need to take to move ahead with your business idea.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="detail-container-wide">
+            <div class="section-card detail-card">
+                <h3 class="detail-title">2. How to Use</h3>
+
+                <div class="how-to-grid">
+                    <div class="how-to-col">
+                        <p class="step-label">1. Write your idea</p>
+                        <p class="step-desc">Type a short description of what you want to build and who will use it.</p>
+                        <div class="step-image">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Write+Your+Idea" alt="Step 1">
+                        </div>
+                    </div>
+
+                    <div class="how-to-col">
+                        <p class="step-label">2. Click analyze</p>
+                        <p class="step-desc">Hit the button to let the AI check if your idea has a strong foundation.
+                        </p>
+                        <div class="step-image">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Click+Analyze" alt="Step 2">
+                        </div>
+                    </div>
+
+                    <div class="how-to-col">
+                        <p class="step-label">3. See your scores</p>
+                        <p class="step-desc">Get clear feedback on the problem, your concept, and a final verdict.</p>
+                        <div class="step-image">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=See+Scores" alt="Step 3">
+                        </div>
+                    </div>
+
+                    <div class="how-to-col">
+                        <p class="step-label">4. Get Tips & Ideas</p>
+                        <p class="step-desc">Get feature & benefit ideas, marketing tips, and tools to help you launch.
+                        </p>
+                        <div class="step-image">
+                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Get+Expert+Tips" alt="Step 4">
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="in-detail-link" onclick="toggleDetail('how-to-detail', this)">
+                    In Detail ↓
+                </button>
+
+                <div id="how-to-detail" class="hidden-detail">
+                    <p style="color: var(--black); font-weight: 800; margin-bottom: 0.8rem; font-size: 1.1rem;">
+                        Understanding Your Results</p>
+                    <p>After you submit your idea, our AI breaks down your concept into three specific evaluation cards.
+                        This isn't just a generic guess; it's an analysis of how your idea fits into the real world:</p>
+
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 15px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">• The Problem
+                                (Market Need)</strong>
+                            Everything starts with the problem. We look at the pain point you identified to see if it’s
+                            a real, "burning" issue that people are willing to pay to solve. A high score here means
+                            you’ve found a gap in the market that actually needs filling.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">• Concept & USP
+                                (Your Solution)</strong>
+                          This card evaluates the logic of your solution. We want to see your "Unique Selling Proposition" - the edge that makes your idea different from everything else out there. If your idea is too similar to everything else, well, you might want to see where you need to be more original.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">• Should You Start
+                                (The Verdict)</strong>
+                            This is your weighted score, the result of combining the strength of the problem with the originality of your solution. It’s the final evaluation that will tell you whether you should start now, or if you should take some time to work on your idea.
+                        </li>
+                    </ul>
+
+                    <hr style="border-color: var(--border-color); opacity: 0.2; margin: 2rem 0;">
+
+                    <p style="color: var(--black); font-weight: 800; margin-bottom: 0.8rem; font-size: 1.1rem;">Your
+                        Strategic Roadmap (Improve My Idea)</p>
+                    <p>If you choose to use the "Improve My Idea" feature, you'll unlock a deeper layer of advice. This
+                        is where we help you move from a simple concept to an actual launch plan:</p>
+
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 18px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">1. Features &
+                                Benefits Tips</strong>
+                          We offer you ideas for additional features or benefits you may not have considered. These are intended to increase the utility of your product for your customers and make your product different and more useful than your competitor's product or service.
+                        </li>
+                        <li style="margin-bottom: 18px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">2. Strategic
+                                Marketing Ideas</strong>
+                            Your toughest challenge will be acquiring your first 10 customers, and we can help you with a variety of free "organic" methods, as well as paid advertising ideas, to get you off the ground quickly without wasting money on advertising that does not produce results.
+                        </li>
+                        <li style="margin-bottom: 18px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">3. Curated Tool
+                                List</strong>
+                            You don't have to waste hours searching for software. We provide a list of the exact website builders, payment processors, and AI tools that are perfect for your specific project, so you can start building the right way.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="detail-container-wide">
+            <div class="whycard section-card detail-card">
+                <h3 class="detail-title">3. Why to Use</h3>
+
+                <div class="how-to-grid">
+                    <div class="how-to-col why-benefit-card">
+                        <p class="step-label">Honest Feedback</p>
+                        <p class="step-desc">Friends often say an idea is great just to be kind. Our AI gives you a
+                            real, unbiased opinion so you can see if your idea actually makes sense.</p>
+                    </div>
+
+                    <div class="how-to-col why-benefit-card">
+                        <p class="step-label">Save Time & Money</p>
+                        <p class="step-desc">Don't waste months building something people might not want. Check if there
+                            is a real need for your idea in 60 seconds before you spend any money.</p>
+                    </div>
+
+                    <div class="how-to-col why-benefit-card">
+                        <p class="step-label">Tips & Ideas</p>
+                        <p class="step-desc">We do more than just score your idea. We give you ideas for extra features
+                            and benefits to improve your concept, share easy marketing tips to find your audience, and
+                            suggest the best tools to help you launch your business right away.</p>
+                    </div>
+                </div>
+
+                <button class="in-detail-link" onclick="toggleDetail('why-to-detail', this)">
+                    In Detail ↓
+                </button>
+
+                <div id="why-to-detail" class="hidden-detail">
+                    <p>Starting a startup is a risk, and the main reason for startup failure is creating something nobody actually needs. AffiStrike helps you avoid this problem by verifying whether there is actually a need for your idea before you start working on it.</p>
+                    <p>Whether you are a solo entrepreneur or a new business owner, it is difficult to recognize the issues, problems, or mistakes that can arise when you want to work on your idea to start a business or build a product. Our AI is here to help you as a second pair of eyes, ensuring you don't have weak spots in your idea and message before you share them with the world.</p>
+                    <p>We are here to bridge the gap from "idea" to "launch" by providing you with tips & ideas for additional features & benefits you can add into your business idea, marketing tips, and tools, so you can stop looking for answers and start working on your startup immediately.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
 
     <footer class="main-footer">
         <div class="global-container">
@@ -1166,24 +1592,17 @@
         };
 
 
-        // 3. Global Toggle Function for Bullet Lists
-        window.toggleBullets = (containerId, btnId) => {
-            const container = document.getElementById(containerId);
-            const btn = document.getElementById(btnId);
+        function toggleDetail(targetId, btnElement) {
+            const detailDiv = document.getElementById(targetId);
 
-            if (container.classList.contains('collapsed')) {
-                container.classList.remove('collapsed');
-                container.style.maxHeight = '2000px'; // Sufficient height for full list
-                btn.innerText = 'Show Less';
+            if (detailDiv.classList.contains('show')) {
+                detailDiv.classList.remove('show');
+                btnElement.innerText = 'In Detail ↓';
             } else {
-                container.classList.add('collapsed');
-                container.style.maxHeight = '140px'; // Back to blurred state
-                btn.innerText = 'Show More';
-
-                // Scroll back to the top of the specific category
-                container.parentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                detailDiv.classList.add('show');
+                btnElement.innerText = 'Show Less ↑';
             }
-        };
+        }
 
     </script>
 </body>
