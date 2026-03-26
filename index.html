@@ -825,6 +825,7 @@
             font-weight: 800;
             cursor: pointer;
             font-size: 0.95rem;
+            padding-bottom:10px;
         }
 
         .in-detail-link:hover {
@@ -850,22 +851,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* The Toggle Button */
-        .in-detail-link {
-            background: none;
-            border: none;
-            color: #6366f1;
-            font-weight: 800;
-            font-size: 0.95rem;
-            padding: 0;
-            cursor: pointer;
-            display: block;
-            margin-left: auto;
-            /* Pushes it to the right */
-            margin-right: 0;
-            text-align: right;
-            /* Centers the button */
-        }
+    
 
         .in-detail-link:hover {
             text-decoration: underline;
@@ -882,13 +868,15 @@
             opacity: 1;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
+            padding-right: 10px;
+            padding-left: 10px;
             border-top: 1px solid var(--border-color);
         }
 
         .hidden-detail p {
-            font-size: 0.95rem;
+            font-size: 16px;
             color: var(--text-muted);
-            line-height: 1.7;
+            line-height: 1.8;
             margin: 0 0 1rem 0;
         }
 
@@ -968,7 +956,7 @@
             }
 
             .how-to-col {
-                margin-top: 0;
+                margin-top: 0.4in;
             }
 
             .whycard.detail-card {
@@ -978,17 +966,31 @@
 
         /* Styling for Why section without images */
         .why-benefit-card {
-            background: #fcfcfd;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease;
+            background-color: #ffffff;
+            /* Base color */
+            background-image:
+                radial-gradient(circle at top left, rgba(130, 189, 238, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, rgba(162, 0, 255, 0.08) 0%, transparent 40%);
+
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            /* Keeps edges clean */
+
+            /* Soft elevation shadow */
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+
+            overflow: hidden;
+            /* Ensures the corner glows don't bleed out */
+            position: relative;
+            transition: transform 0.3s ease;
         }
 
         .why-benefit-card:hover {
             transform: translateY(-5px);
-            border-color: #6366f1;
         }
+
+
 
         .why-benefit-card .step-label {
             color: #6366f1;
@@ -1083,7 +1085,7 @@
                         <p class="step-label">1. Write your idea</p>
                         <p class="step-desc">Type a short description of what you want to build and who will use it.</p>
                         <div class="step-image">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Write+Your+Idea" alt="Step 1">
+                            <img src="media/screen/1.jpg" alt="Step 1">
                         </div>
                     </div>
 
@@ -1092,7 +1094,7 @@
                         <p class="step-desc">Hit the button to let the AI check if your idea has a strong foundation.
                         </p>
                         <div class="step-image">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Click+Analyze" alt="Step 2">
+                            <img src="media/screen/2.jpg" alt="Step 2">
                         </div>
                     </div>
 
@@ -1100,7 +1102,7 @@
                         <p class="step-label">3. See your scores</p>
                         <p class="step-desc">Get clear feedback on the problem, your concept, and a final verdict.</p>
                         <div class="step-image">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=See+Scores" alt="Step 3">
+                            <img src="media/screen/3.jpg" alt="Step 3">
                         </div>
                     </div>
 
@@ -1109,7 +1111,7 @@
                         <p class="step-desc">Get feature & benefit ideas, marketing tips, and tools to help you launch.
                         </p>
                         <div class="step-image">
-                            <img src="https://placehold.co/600x400/f8fafc/cbd5e1?text=Get+Expert+Tips" alt="Step 4">
+                            <img src="media/screen/4.jpg" alt="Step 4">
                         </div>
                     </div>
 
@@ -1190,19 +1192,19 @@
                 <h3 class="detail-title">3. Why to Use</h3>
 
                 <div class="how-to-grid">
-                    <div class="how-to-col why-benefit-card">
+                    <div class=" why-benefit-card">
                         <p class="step-label">Honest Feedback</p>
                         <p class="step-desc">Friends often say an idea is great just to be kind. Our AI gives you a
                             real, unbiased opinion so you can see if your idea actually makes sense.</p>
                     </div>
 
-                    <div class="how-to-col why-benefit-card">
+                    <div class=" why-benefit-card">
                         <p class="step-label">Save Time & Money</p>
                         <p class="step-desc">Don't waste months building something people might not want. Check if there
                             is a real need for your idea in 60 seconds before you spend any money.</p>
                     </div>
 
-                    <div class="how-to-col why-benefit-card">
+                    <div class=" why-benefit-card">
                         <p class="step-label">Tips & Ideas</p>
                         <p class="step-desc">We do more than just score your idea. We give you ideas for extra features
                             and benefits to improve your concept, share easy marketing tips to find your audience, and
