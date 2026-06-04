@@ -531,7 +531,7 @@
         // Fetch affiliate database parameters
         async function fetchAffiliateData() {
             try {
-                const response = await fetch('https://affistrike.online/affiliateData.json');
+                const response = await fetch('affiliateData.json');
                 if (response.ok) {
                     affiliateDatabase = await response.json();
                     console.log("Loaded affiliate data successfully.");
