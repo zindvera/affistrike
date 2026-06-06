@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCX2FT180"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-CYCX2FT180');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Affibiz Idea Analyzer",
+        "url": "https://affistrike.online/",
+        "alternateName": "Affibiz Business Idea Analyzer"
+        }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../media/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../media/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../media/favicon-180x180.png">
+    <title>How Is My Business Idea? | Get Instant AI Feedback - AffiStrike</title>
+    <meta property="og:site_name" content="AffiStrike" />
+    <meta name="google-site-verification" content="vMBlv6GM3DaNAKWDB99sVvdSVCjbU_hzXi2-O9NdrXo" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            --bg-color: #fcfcfd;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --white: #ffffff;
+            --black: #000000;
+            --border-color: #f3f4f6;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --btn-blue-grey: #f1f5f9;
+            --success-green: #059669;
+            --link-color: #6366f1;
+            --error-red: #ef4444;
+            --chat-user-bg: #eff6ff;
+            --chat-error-bg: #fef2f2;
+            --chat-error-border: #fecaca;
+            --chat-error-text: #991b1b;
+        }
+
+        /* --- BODY BACKGROUND (SOFT MESH GRADIENT) --- */
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+            margin: 0;
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- FIXED NAVBAR (SOLID WHITE) --- */
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background: #ffffff;
+            border-bottom: 1px solid #edf2f7;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #111827;
+        }
+
+        .logo span {
+            color: #6366f1;
+        }
+
+        /* --- MAIN HEADER & TYPOGRAPHY --- */
+        .main-header {
+            padding-top: 110px;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Mobile Styles (Default) */
+        .main-header h1 {
+            font-size: 2.8rem;
+            letter-spacing: -0.05em;
+            line-height: 1.1;
+
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .subtext {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 1rem auto;
+        }
+
+        /* Tablet Styles (Dedicated Query) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .main-header h1 {
+                font-size: 3rem;
+            }
+
+            .subtext {
+                font-size: 1.05rem;
+            }
+        }
+
+        /* Desktop Styles (Dedicated Query) */
+        @media (min-width: 1025px) {
+            .about-div {
+                width: 60%;
+                margin: 45px auto 0 auto;
+            }
+
+            .main-header h1 {
+                font-size: 3.8rem;
+                max-width: 850px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .subtext {
+                font-size: 1.15rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* The "Jumping Fix" for rotating words */
+        .word-carousel {
+            display: inline-grid;
+            text-align: center;
+            vertical-align: baseline;
+            position: relative;
+            padding: 0 4px;
+        }
+
+        .word-carousel::after {
+            content: "business";
+            grid-area: 1/1;
+            visibility: hidden;
+            height: 0;
+        }
+
+        .tip-category-title {
+            display: block;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--black);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        #rotating-word {
+            grid-area: 1/1;
+            background: linear-gradient(135deg, #4f46e5 0%, #9333ea 45%, #db2777 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+
+        .fade-hidden {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .nowrap-group {
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* --- FOOTER (SOLID WHITE) --- */
+        .main-footer {
+            padding: 60px 0 30px;
+            margin-top: 80px;
+            background: #ffffff;
+            border-top: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #111827;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .global-container {
+            width: calc(100% - 14px);
+            margin: 0 7px;
+        }
+
+        @media (min-width: 768px) {
+            .global-container {
+                width: 90%;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+        }
+
+        .content-text {
+            margin-top: 0.2in;
+        }
+
+        .custom-textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            border: 2px solid var(--border-color);
+            border-radius: 1.5rem;
+            outline: none;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        .custom-textarea:focus {
+            border-color: #6366f1;
+        }
+
+        /* Container for the bullet list */
+        .bullet-container {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        /* The blurring effect for the 3rd item */
+        .bullet-container.collapsed {
+            max-height: 140px;
+            /* Adjust based on your font size to show ~2.5 bullets */
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+
+
+
+        .btn-show-more {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #6366f1;
+            font-weight: 800;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+        }
+
+        .btn-show-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px -2px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Container for the bullet list */
+        .bullet-container {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out;
+        }
+
+        /* The blurring effect for the 3rd item */
+        .bullet-container.collapsed {
+            max-height: 130px;
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        }
+
+        .show-more-wrapper {
+            text-align: center;
+            margin-top: 15px;
+            /* Position it over the blurred area */
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Pure link styling */
+        .link-show-more {
+            color: #6366f1;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .link-show-more:hover {
+            text-decoration: underline;
+            color: #4f46e5;
+        }
+
+        .btn-black {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 800;
+            font-size: 0.95rem;
+            width: fit-content;
+            min-width: 140px;
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.2s;
+        }
+
+        .btn-black:active {
+            transform: scale(0.95);
+        }
+
+        .btn-black:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .section-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .verdict-box {
+            border-left: 4px solid var(--black);
+            padding-left: 1.25rem;
+        }
+
+        /* New layout for the verdict section */
+        .verdict-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 1rem;
+        }
+
+        /* The Label Badge (Yes Absolutely, etc.) */
+        .status-badge {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+
+        /* Layout to match the Concept & USP cards exactly */
+        .result-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+
+        /* Ensure these classes match your existing ones */
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--black);
+            vertical-align: middle;
+        }
+
+        .quality-badge {
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        /* The Probability Text */
+        .probability-badge {
+            background: rgba(241, 245, 249, 0.7);
+            backdrop-filter: blur(8px);
+            color: #475569;
+            padding: 0.5rem 1.2rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(226, 232, 240, 1);
+        }
+
+        /* Responsive Behavior */
+        @media (max-width: 767px) {
+            .verdict-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .probability-badge {
+                margin-left: auto;
+                /* Pushes to the right on Tablet/Desktop */
+            }
+        }
+
+        /* Mobile specific: Stack the probability under the status */
+        @media (max-width: 767px) {
+            .verdict-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .probability-badge {
+                margin-left: 0;
+            }
+        }
+
+        /* Desktop: Push probability to the right */
+        @media (min-width: 768px) {
+            .probability-badge {
+                margin-left: auto;
+            }
+        }
+
+
+
+        .score-label {
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: #6366f1;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            display: block;
+            letter-spacing: 0.05em;
+        }
+
+        .score-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-right: 0.5rem;
+            color: var(--black);
+            vertical-align: middle;
+        }
+
+        .quality-badge {
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-left: 0.5rem;
+            border: 1px solid var(--border-color);
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+
+        .verdict-badge {
+            background: #f3f4f6;
+            color: var(--text-main);
+            padding: 0.4rem 1.2rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .improve-btn {
+            position: relative;
+            background: var(--btn-blue-grey);
+            color: var(--black);
+            border: 3px solid #e2e8f0;
+            padding: 1.25rem 3rem;
+            border-radius: 4rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1;
+            overflow: visible;
+        }
+
+        .improve-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none !important;
+        }
+
+        .improve-btn::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: conic-gradient(from 0deg, transparent 0%, transparent 70%, #6366f1 85%, #ec4899 100%);
+            border-radius: 4rem;
+            z-index: -1;
+            opacity: 0;
+            padding: 4px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: destination-out;
+        }
+
+
+        .animate-border::after {
+            opacity: 1;
+            animation: snake-border 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes snake-border {
+            0% {
+                transform: rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: rotate(1080deg);
+                opacity: 0;
+            }
+        }
+
+        .improve-btn:hover:not(:disabled) {
+            transform: translateY(-4px);
+            background: #fff;
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.15);
+            border-color: #cbd5e1;
+        }
+
+        .badge-container-wrapper {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.25rem;
+            width: 100%;
+        }
+
+        .chat-bubble {
+            border-radius: 1.5rem;
+            padding: 1.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .bubble-user {
+            background: var(--chat-user-bg);
+            align-self: flex-end;
+            font-weight: 600;
+            margin-left: auto;
+            max-width: 85%;
+            color: #1e40af;
+            border: 1px solid #dbeafe;
+        }
+
+        .bubble-error {
+            background: var(--chat-error-bg);
+            border: 1px solid var(--chat-error-border);
+            color: var(--chat-error-text);
+            align-self: flex-start;
+            font-weight: 600;
+            max-width: 85%;
+        }
+
+        .affiliate-link {
+            color: var(--link-color);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .affiliate-link:hover {
+            color: #4f46e5;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .loader-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+            width: 100%;
+        }
+
+        .blue-spinner {
+            width: 42px;
+            height: 42px;
+            border: 4px solid #eff6ff;
+            border-bottom-color: #6366f1;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 0.8s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .read-more-btn {
+            color: #6366f1;
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0;
+            cursor: pointer;
+            margin-left: 5px;
+            text-decoration: underline;
+        }
+
+        .dots {
+            color: var(--text-muted);
+        }
+
+        #error-toast {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--error-red);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            z-index: 9999;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .nav-logo {
+            height: 40px;
+            /* Mobile size */
+            width: auto;
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .nav-logo {
+                height: 41px;
+                /* Tablet size */
+            }
+
+            .about-div {
+                width: 65%;
+                margin: 45px auto 0 auto;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .nav-logo {
+                height: 42px;
+                /* Desktop size */
+            }
+        }
+
+        /* Master Wrapper to hold everything we build */
+        .affistrike-details-wrapper {
+            width: 100%;
+            margin-top: 1.2in;
+        }
+
+        /* Specific narrow container for Card 1 */
+        .detail-container-narrow {
+            max-width: 95%;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Card Styling */
+        .detail-card {
+            text-align: left;
+            padding: 3.5rem 2rem;
+            border-radius: 24px;
+        }
+
+        .detail-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--black);
+            margin: 0 0 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight-text {
+            font-size: 1.4rem;
+            /* Bigger text */
+            font-weight: 800;
+            /* Extra Bold */
+            color: #111827;
+            line-height: 1.88;
+
+            /* This creates the "pen mark" look */
+            background: #eef2ff;
+            /* Light bluish off-white */
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline;
+
+            /* Ensures the background stays on the text if it wraps lines */
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        /* Container for the highlighted text */
+        .detail-short-container {
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            width: 100%;
+            /* Full width on phone */
+        }
+
+        /* Tablet & Desktop View: Apply 70% width and centering */
+        @media (min-width: 768px) {
+            .detail-short-container {
+                max-width: 70%;
+            }
+        }
+
+
+
+        /* Align "In Detail" links to the far right of the card */
+        .in-detail-link {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+            margin-top: 0.25in;
+            text-align: right;
+            background: none;
+            border: none;
+            color: #6366f1;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding-bottom: 10px;
+        }
+
+        .in-detail-link:hover {
+            text-decoration: underline;
+        }
+
+        .detail-short {
+            font-size: 1.25rem;
+            /* Slightly bigger */
+            font-weight: 700;
+            /* Bold */
+            color: var(--text-main);
+            line-height: 1.5;
+            text-align: left;
+            /* Changed to left for a cleaner look with right-aligned link */
+
+            /* Light bluish off-white background */
+            background-color: #f0f7ff;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            display: inline-block;
+            /* Makes background only wrap the text area */
+            margin-bottom: 1.5rem;
+        }
+
+
+
+        .in-detail-link:hover {
+            text-decoration: underline;
+        }
+
+        /* The Hidden Expanded Text */
+        .hidden-detail {
+            display: none;
+            opacity: 0;
+        }
+
+        .hidden-detail.show {
+            display: block;
+            opacity: 1;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .hidden-detail p {
+            font-size: 18px;
+            color: #434344;
+            line-height: 1.8;
+            margin: 0 0 1rem 0;
+        }
+
+        .hidden-detail p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .detail-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .detail-title {
+                padding-top: 21px;
+            }
+        }
+
+        .detail-container-wide {
+            max-width: 95%;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* 3 cards per row for desktop and tablet */
+        .how-to-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 0.5in;
+            margin-bottom: 2rem;
+        }
+
+        .how-to-col {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 0.25in;
+        }
+
+        .step-label {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #111827;
+            margin: 0 0 0.4rem 0;
+        }
+
+        /* Positioned just below step-label */
+        .step-desc {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        .step-image {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: #f8fafc;
+            margin-bottom: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+
+        /* 1 card per row for phone view */
+        @media (max-width: 767px) {
+            .highlight-text {
+                font-size: 1.3rem;
+                line-height: 1.8;
+                padding: 4px 10px;
+            }
+
+            .how-to-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .how-to-col {
+                margin-top: 0.4in;
+            }
+
+            .whycard.detail-card {
+                padding: 0;
+            }
+        }
+
+        /* Styling for Why section without images */
+        .why-benefit-card {
+            background-color: #ffffff;
+            /* Base color */
+            background-image:
+                radial-gradient(circle at top left, rgba(130, 189, 238, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at bottom right, rgba(162, 0, 255, 0.08) 0%, transparent 40%);
+
+            border-radius: 16px;
+            padding: 40px 28px;
+            min-height: 220px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            /* Keeps edges clean */
+
+            /* Soft elevation shadow */
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+
+            overflow: hidden;
+            /* Ensures the corner glows don't bleed out */
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .why-benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+
+        .why-benefit-card .step-label {
+            color: #6366f1;
+            /* Makes the heading pop since there is no image */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar-fixed">
+        <div class="global-container nav-content">
+            <a href="index.html" style="display: flex; align-items: center;">
+                <img src="media/logo-800.png" alt="AffiStrike" class="nav-logo">
+            </a>
+        </div>
+    </nav>
+
+
+
+    <div id="error-toast"></div>
+
+
+    <header class="global-container text-center main-header">
+        <h1 class="fw-800">
+            How is my
+            <span class="word-carousel">
+                <span id="rotating-word">business</span>
+            </span>
+            <span class="nowrap-group">idea?</span>
+        </h1>
+        <p class="subtext">
+            Find out if your idea is <strong>worth pursuing</strong>.
+        </p>
+    </header>
+
+    <main class="global-container">
+        <div id="chat-phase" class="hidden mt-2">
+            <div id="messages-container"></div>
+            <div id="global-loader" class="hidden">
+                <div class="loader-wrapper">
+                    <span class="blue-spinner"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="ui-input-area" class="mt-4">
+            <textarea id="ideaInput" rows="3" class="custom-textarea mb-3"
+                placeholder="Describe your business or product idea here..."></textarea>
+            <button id="btn-analyze" class="btn-black" onclick="startValidation()">Analyze Idea</button>
+        </div>
+    </main>
+
+    <div class="affistrike-details-wrapper">
+
+        <div class="detail-container-narrow">
+
+            <div class="section-card detail-card">
+                <h3 class="detail-title">1. What is AffiStrike?</h3>
+                <div class="about-div">
+                    <div class="highlight-text">
+                        AffiStrike is an AI-powered "gut check" that tells you if your business idea is worth pursuing
+                        before you spend time or money building it.
+                    </div>
+                </div>
+
+
+                <button class="in-detail-link" onclick="toggleDetail('affistrike-detail', this)">
+                    In Detail ↓
+                </button>
+
+                <div id="affistrike-detail" class="hidden-detail">
+                    <p>Most entrepreneurs ask friends for feedback, but friends are often too nice to tell the truth.
+                        AffiStrike acts as your digital sounding board, giving you a completely objective and instant
+                        analysis of your concept.</p>
+
+                    <p>It evaluates your idea across three pillars: the reality of the problem you are trying to solve,
+                        the USP of your idea, and finally, the verdict score on whether your idea is worth pursuing or
+                        if it needs improvement. You will come to know the greatest strengths of your idea, the problems
+                        you might face, and the steps you need to take to move ahead with your business idea.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="detail-container-wide">
+            <div class="section-card detail-card">
+                <h3 class="detail-title">2. How to Use</h3>
+
+                <div class="how-to-grid">
+                    <div class="how-to-col">
+                        <p class="step-label">1. Write your idea</p>
+                        <p class="step-desc">Type a short description of what you want to build and who will use it.</p>
+                        <div class="step-image">
+                            <img src="media/screen/1.jpg" alt="Step 1">
+                        </div>
+                    </div>
+
+                    <div class="how-to-col">
+                        <p class="step-label">2. Click analyze</p>
+                        <p class="step-desc">Hit the button to let the AI check if your idea has a strong foundation.
+                        </p>
+                        <div class="step-image">
+                            <img src="media/screen/2.jpg" alt="Step 2">
+                        </div>
+                    </div>
+
+                    <div class="how-to-col">
+                        <p class="step-label">3. See your scores</p>
+                        <p class="step-desc">Get clear feedback on the problem, your concept, and a final verdict.</p>
+                        <div class="step-image">
+                            <img src="media/screen/3.jpg" alt="Step 3">
+                        </div>
+                    </div>
+
+                    <div class="how-to-col">
+                        <p class="step-label">4. Get Tips & Ideas</p>
+                        <p class="step-desc">Get feature & benefit ideas, marketing tips, and tools to help you launch.
+                        </p>
+                        <div class="step-image">
+                            <img src="media/screen/4.jpg" alt="Step 4">
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="in-detail-link" onclick="toggleDetail('how-to-detail', this)">
+                    In Detail ↓
+                </button>
+
+                <div id="how-to-detail" class="hidden-detail">
+                    <p style="color: var(--black); font-weight: 800; margin-bottom: 0.8rem; font-size: 1.1rem;">
+                        Understanding Your Results</p>
+                    <p>After you submit your idea, our AI breaks down your concept into three specific evaluation cards.
+                        This isn't just a generic guess; it's an analysis of how your idea fits into the real world:</p>
+
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 15px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">• The Problem
+                                (Market Need)</strong>
+                            Everything starts with the problem. We look at the pain point you identified to see if it’s
+                            a real, "burning" issue that people are willing to pay to solve. A high score here means
+                            you’ve found a gap in the market that actually needs filling.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">• Concept & USP
+                                (Your Solution)</strong>
+                            This card evaluates the logic of your solution. We want to see your "Unique Selling
+                            Proposition" - the edge that makes your idea different from everything else out there. If
+                            your idea is too similar to everything else, well, you might want to see where you need to
+                            be more original.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">• Should You Start
+                                (The Verdict)</strong>
+                            This is your weighted score, the result of combining the strength of the problem with the
+                            originality of your solution. It’s the final evaluation that will tell you whether you
+                            should start now, or if you should take some time to work on your idea.
+                        </li>
+                    </ul>
+
+                    <hr style="border-color: var(--border-color); opacity: 0.2; margin: 2rem 0;">
+
+                    <p style="color: var(--black); font-weight: 800; margin-bottom: 0.8rem; font-size: 1.1rem;">Your
+                        Strategic Roadmap (Improve My Idea)</p>
+                    <p>If you choose to use the "Improve My Idea" feature, you'll unlock a deeper layer of advice. This
+                        is where we help you move from a simple concept to an actual launch plan:</p>
+
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 18px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">1. Features &
+                                Benefits Tips</strong>
+                            We offer you ideas for additional features or benefits you may not have considered. These
+                            are intended to increase the utility of your product for your customers and make your
+                            product different and more useful than your competitor's product or service.
+                        </li>
+                        <li style="margin-bottom: 18px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">2. Strategic
+                                Marketing Ideas</strong>
+                            Your toughest challenge will be acquiring your first 10 customers, and we can help you with
+                            a variety of free "organic" methods, as well as paid advertising ideas, to get you off the
+                            ground quickly without wasting money on advertising that does not produce results.
+                        </li>
+                        <li style="margin-bottom: 18px;">
+                            <strong style="display: block; color: var(--black); margin-bottom: 4px;">3. Curated Tool
+                                List</strong>
+                            You don't have to waste hours searching for software. We provide a list of the exact website
+                            builders, payment processors, and AI tools that are perfect for your specific project, so
+                            you can start building the right way.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="detail-container-wide">
+            <div class="whycard section-card detail-card">
+                <h3 class="detail-title">3. Why to Use</h3>
+
+                <div class="how-to-grid">
+                    <div class=" why-benefit-card">
+                        <p class="step-label">Honest Feedback</p>
+                        <p class="step-desc">Friends often say an idea is great just to be kind. Our AI gives you a
+                            real, unbiased opinion so you can see if your idea actually makes sense.</p>
+                    </div>
+
+                    <div class=" why-benefit-card">
+                        <p class="step-label">Save Time & Money</p>
+                        <p class="step-desc">Don't waste months building something people might not want. Check if there
+                            is a real need for your idea in 60 seconds before you spend any money.</p>
+                    </div>
+
+                    <div class=" why-benefit-card">
+                        <p class="step-label">Tips & Ideas</p>
+                        <p class="step-desc">We do more than just score your idea. We give you ideas for extra features
+                            and benefits to improve your concept, share easy marketing tips to find your audience, and
+                            suggest the best tools to help you launch your business right away.</p>
+                    </div>
+                </div>
+
+                <button class="in-detail-link" onclick="toggleDetail('why-to-detail', this)">
+                    In Detail ↓
+                </button>
+
+                <div id="why-to-detail" class="hidden-detail">
+                    <p>Starting a startup is a risk, and the main reason for startup failure is creating something
+                        nobody actually needs. AffiStrike helps you avoid this problem by verifying whether there is
+                        actually a need for your idea before you start working on it.</p>
+                    <p>Whether you are a solo entrepreneur or a new business owner, it is difficult to recognize the
+                        issues, problems, or mistakes that can arise when you want to work on your idea to start a
+                        business or build a product. Our AI is here to help you as a second pair of eyes, ensuring you
+                        don't have weak spots in your idea and message before you share them with the world.</p>
+                    <p>We are here to bridge the gap from "idea" to "launch" by providing you with tips & ideas for
+                        additional features & benefits you can add into your business idea, marketing tips, and tools,
+                        so you can stop looking for answers and start working on your startup immediately.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+ 
+    <footer class="main-footer">
+        <div class="global-container">
+            <div class="footer-links">
+                <a href="../../about.html">About</a>
+                <a href="../../privacy.html">Privacy</a>
+                <a href="../../terms.html">Terms</a>
+                <a href="../../contact.html">Contact</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 AffiStrike. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

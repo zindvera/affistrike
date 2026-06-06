@@ -4,7 +4,7 @@ let affiliateProducts = [];
 
 async function fetchTools() {
     try {
-        const response = await fetch('affiliateData.json');
+        const response = await fetch('../../affiliateData.json');
         if (!response.ok) throw new Error("Failed to load JSON");
         affiliateProducts = await response.json();
     } catch (err) {
