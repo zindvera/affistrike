@@ -736,6 +736,8 @@
         };
 
         // Core Search Orchestrator Function
+      
+        // Core Search Orchestrator Function
         window.startSearch = async function (prefill = null) {
             const inputEl = document.getElementById('searchQuery');
             const query = prefill || inputEl.value.trim();
@@ -765,9 +767,11 @@
             const isPredefinedSearch = !!matchedPredefined;
             const predefinedResults = isPredefinedSearch ? (matchedPredefined.results || []) : [];
 
-            // Execute zero-latency bypass if predefined dataset contains 30+ items
-            if (isPredefinedSearch && predefinedResults.length >= 30) {
-                console.log("Direct Static Cache Hit! Bypassing LLM generation completely.");
+            // Execute zero-latency bypass if dataset has 30+ items OR if query has restrict enabled
+            const isRestricted = isPredefinedSearch && matchedPredefined.restrict === true;
+            
+            if ((isPredefinedSearch && predefinedResults.length >= 30) || isRestricted) {
+                console.log(isRestricted ? "Restricted query match! Bypassing LLM." : "Direct Static Cache Hit! Bypassing LLM.");
                 processAndRenderResults(predefinedResults, isPredefinedSearch, predefinedResults);
                 loader.classList.add('hidden');
                 btn.disabled = false;
@@ -844,6 +848,7 @@
                 chatContext.pop();
             }
         };
+        
 
         // Comprehensive 3-Tier Sorting Engine & Core Affiliate Transformer
         function processAndRenderResults(resultsArray, isPredefinedSearch, predefinedResultsList) {

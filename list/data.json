@@ -1,56 +1,27 @@
 [
-  {
-    "query": "mailchimp+alternative",
+ {
+    "query": "platforms+that+pay+just+to+curate+products",
+    "restrict": true,
     "results": [
       {
-        "name": "Beehiiv",
-        "url": "https://www.beehiiv.com/ref=vine",
-        "desc": "A premium newsletter ecosystem with a built-in referral system and cutting-edge monetization tools, designed specifically for scaling creators."
+        "name": "Benable",
+        "url": "https://benable.com/i/7PQQM",
+        "desc": "A dedicated platform for building visual, shoppable lists with instant affiliate monetization. Clicking this link automatically applies invite code 7PQQM to bypass the waitlist for instant approval."
       },
       {
-        "name": "MailerLite",
-        "url": "https://www.mailerlite.com?ref=vion",
-        "desc": "A highly user-friendly and robust email newsletter software featuring clean drag-and-drop editors and advanced automation triggers."
+        "name": "ShopMy",
+        "url": "https://shopmy.us",
+        "desc": "A premium digital storefront and list builder designed for curators to compile product recommendations into custom visual catalogs with weekly payouts."
       },
       {
-        "name": "Brevo",
-        "url": "https://www.brevo.com",
-        "desc": "Formerly Sendinblue, an all-in-one suite offering complete marketing tools, automated workflows, and reliable transactional emails."
-      }
-    ]
-  },
-  {
-    "query": "canva+alternative",
-    "results": [
-      {
-        "name": "Figma",
-        "url": "https://www.figma.com",
-        "desc": "A collaborative and highly professional interface design platform, perfect for scaling from basic graphics to advanced user interfaces."
+        "name": "LTK",
+        "url": "https://www.shopltk.com",
+        "desc": "A massive lifestyle and product curation network that allows creators to build shoppable lookbooks and recommendation lists connected to thousands of brands."
       },
       {
-        "name": "Penpot",
-        "url": "https://penpot.app",
-        "desc": "A great open-source, web-based alternative for designers who want freedom from proprietary lock-ins without sacrificing robust vector layouts."
-      }
-    ]
-  },
-  {
-    "query": "website+builder",
-    "results": [
-      {
-        "name": "Carrd",
-        "url": "https://carrd.co//ref=vine",
-        "desc": "A streamlined 'no-code' page builder ideal for setting up lightning-fast one-page landing sites, portfolios, and lead capture forms."
-      },
-      {
-        "name": "Webflow",
-        "url": "https://webflow.com",
-        "desc": "An advanced, visually rich builder giving you full, production-ready HTML, CSS, and JS customization power without requiring direct writing."
-      },
-      {
-        "name": "Framer",
-        "url": "https://www.framer.com",
-        "desc": "Design your interface directly canvas-style and publish interactive, high-fidelity responsive websites instantly."
+        "name": "Linktree Shops",
+        "url": "https://linktr.ee",
+        "desc": "A storefront curation feature integrated directly into the link-in-bio platform that lets users group products into shoppable collection links."
       }
     ]
   }
